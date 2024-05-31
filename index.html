@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pan de Dioses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://www.hosteleriasalamanca.es/fotos/1470906766.0836.jpg'); /* Imagen de fondo */
+            background-size: cover;
+            background-attachment: fixed;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: none; /* Ocultar inicialmente */
+        }
+        h2 {
+            color: #000000;
+            text-align: center;
+        }
+        h1 {
+            color: #d2691e;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            margin: 5px 0;
+            padding: 5px;
+            border: 1px solid #ddd;
+        }
+        .header {
+            text-align: center;
+        background-color: #d2691e;
+        color: white;
+        padding: 10px 0; /* Reducción del espacio vertical */
+        position: relative;
+        }
+        .header img {
+            max-width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1; /* Colocar detrás del texto */
+        }
+        .footer {
+            text-align: center;
+            background-color: #000000;
+            color: white;
+            padding: 10px 0;
+        }
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semitransparente */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .product {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .product img {
+            max-width: 200px;
+            margin-right: 20px;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #d2691e;
+            padding: 10px 0;
+        }
+        .nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            display: none; /* Ocultar secciones inicialmente */
+        }
+        .active {
+            display: block; /* Mostrar sección activa */
+        }
+    </style>
+    <script>
+        function checkAge() {
+            var age = prompt("Nos gustaría conocerte, ingrese su edad:");
+            if (age >= 18) {
+                document.body.style.display = "block"; // Mostrar el contenido de la página
+                showSection('inicio');
+            } else {
+                document.body.innerHTML = "<h1>Lo sentimos, debes ser mayor de 18 años para acceder a este sitio.</h1>";
+                document.body.style.display = "block"; // Mostrar el mensaje de restricción
+            }
+        }
+
+        function showSection(sectionId) {
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active');
+            }
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</head>
+<body onload="checkAge()">
+    <!-- Encabezado de la página -->
+    <div class="header">
+        <img src="https://www.example.com/imagen_cabecera.jpg" alt="Imagen de Cabecera"> <!-- Imagen de la cabecera -->
+        <h1>Pan de los Dioses</h1>
+    </div>
+
+    <!-- Barra de navegación -->
+    <div class="nav">
+        <a href="#" onclick="showSection('inicio')">Inicio</a>
+        <a href="#" onclick="showSection('quienes-somos')">Quiénes Somos</a>
+        <a href="#" onclick="showSection('contactanos')">Contáctanos</a>
+        <a href="#" onclick="showSection('tiendas')">Tiendas</a>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="main-content">
+        <!-- Sección de Inicio -->
+        <div id="inicio" class="section active">
+            <h2>Bienvenido a Pan de Dioses</h2>
+            <p>Porque el pulque y el pan no es una moda, es una tradición.</p>
+
+            <h3>Nuestros Productos</h3>
+            <div class="product">
+                <img src="https://i.blogs.es/aaebe0/pan_integral/1366_2000.jpeg" alt="Pan de pulque">
+                <div>
+                    <h4>Pan de pulque estilo Integral</h4>
+                    <p>Pan integral recién horneado con ingredientes naturales y saludables.</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://selecciones.com.mx/wp-content/uploads/2017/10/origen-del-pan-de-muerto-1.jpg" alt="Pan de muerto">
+                <div>
+                    <h4>Pan de muerto con sabor pulque </h4>
+                    <p>Por que para nosotos es importante traemos los mejores ingredientes con  la mejor calidad y tradición.</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://www.eluniversal.com.mx/resizer/PBXGOjlg-G6gY9HPc8hSFhXlUoM=/1100x666/cloudfront-us-east-1.images.arcpublishing.com/eluniversal/R4YHIEARLBBLDMF4OONUBXEZCE.jpg" alt="Pan de Pulque con Mazapan">
+                <div>
+                    <h4>Pan de Pulque con Mazapan</h4>
+                    <p>Delicioso pan de pulque con un autentico sabor a mazapan te va encantar.</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://m.media-amazon.com/images/I/51PohfcAtVL._AC_.jpg" alt="pan de fiesta">
+                <div>
+                    <h4>Pan de fiesta sabor nuez</h4>
+                    <p>Pan de pulque sabor a nuez estilo fiesta para que lleves mas que una tradicion de sabores a tu casa</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="https://sweetiepie.cl/wp-content/uploads/2016/07/fotos-agosto-1-1000x500.jpg" alt="Pan de Masa Madre">
+                <div>
+                    <h4>Pan de pulque elevorado con masa madre</h4>
+                    <p>Pan sabor pulque con masa madre con una textura y sabor únicos, elaborado de forma artesanal.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sección Quiénes Somos -->
+        <div id="quienes-somos" class="section">
+            <h2>Quiénes Somos</h2>
+            <p>Somos una empresa dedicada a la elaboración de pan de pulque, enriquecer la cocina cotidiana proporcionando alimentos nutritivos y así fomentar una alimentación exquisita y saludable con la finalidad de ofrecer productos de calidad orientados a satisfacer las necesidades del cliente.
+            </p>
+            <h2>Nuestra Historia</h2>
+            <p>Nuestra historia comienza en 1922, en la ciudad de Oaxaca, en la Hacienda de La Aguilera, en donde vivían los señores Juana Hernández y Juan Nepomuceno Jiménez, quienes comienzan este enorme proyecto con una pequeña alfarería, la cual poco a poco va creciendo hasta convertirse en un taller familiar.
+            </p>
+        </div>
+
+        <!-- Sección Contáctanos -->
+        <div id="contactanos" class="section">
+            <h2>Contáctanos</h2>
+            <p>Visítanos en nuestra tienda o contáctanos para pedidos especiales:</p>
+            <p>Instagram: @pandedioses</p>
+            <p>Dirección: Camino Real, Ixtapaluca Centro</p>
+            <p>Teléfono: (52) 55-21-45-01-71</p>
+            <p>Email: pandelosdioses@gmail.com</p>
+        </div>
+
+        <!-- Sección Tiendas -->
+        <div id="tiendas" class="section">
+            <h2>Nuestras Tiendas</h2>
+            <p>Encuentra nuestras tiendas en las siguientes ubicaciones:</p>
+            <ul>
+                <li>Tienda 1: Av. Cuauhtémoc No. 13, Centro, 56530 Ixtapaluca, Méx.</li>
+                <li>Tienda 2: Av Agricultura 15, San Juan Tlalpizahuac, 56618 Valle de Chalco Solidaridad, Méx.</li>
+                <li>Tienda 3: Calz. Tlahuac - Tulyehualco 8615-Local A, San Isidro, Tláhuac, 13094 Ciudad de México, CDMX</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <div class="footer">
+        <p>&copy; 2024 Pan de los Dioses. Todos los derechos reservados.</p>
+    </div>
+</body>
+</html>
+
